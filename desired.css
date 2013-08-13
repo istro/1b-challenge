@@ -1,0 +1,98 @@
+body {
+  font-family: Arial;
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}
+
+#nav {
+  background-color: #eee;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+#nav ul {
+  list-style-type: none;
+  margin: 27px 0 0 0;
+}
+
+#nav ul li {
+  cursor: pointer;
+  display: inline;
+  padding: 6px 20px;
+}
+
+#nav ul li.active {
+  background-color: #222;
+  border-top: 2px solid #222;
+  border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+}
+
+#nav ul li a {
+  color: #222;
+  text-decoration: none;
+}
+
+#nav ul li.active a {
+  color: #eee;
+}
+
+#content {
+  background-color: #222;
+  color: #eee;
+  height: 95%; /* fallback for browsers without support for calc() */
+  height: calc(100% - 50px);
+  margin-top: 50px;
+}
+
+.users {
+  display: inline-block;
+  list-style-type: none;
+  margin: 30px;
+  padding: 0;
+}
+
+.users li {
+  border: 1px solid #666;
+  float: left;
+  margin: 10px;
+  width: 290px;
+}
+
+.usr_img {
+  float: left;
+  background: #666;
+  height: 80px;
+  width: 80px;
+  margin: 10px;
+}
+
+.usr_inf {
+  display: inline-block;
+  margin-top: 10px;
+  width: 180px;
+}
+
+.usr_inf h5 {
+  border-bottom: 1px solid #333;
+  font-size: 22px;
+  font-weight: 300;
+  margin: 0;
+  padding-bottom: 3px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.usr_inf p {
+  font-size: 14px; /* smaller than provided mock - but allows for three lines of text. In reality, there's a css-only ellipsis overflow solution for multiline - here - http://www.mobify.com/blog/multiline-ellipsis-in-pure-css/ - but too much effort for just a coding challenge. */
+  height: 50px;
+  margin: 3px;
+  overflow: hidden;
+}

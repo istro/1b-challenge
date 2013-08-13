@@ -1,0 +1,91 @@
+<!doctype html>
+<!-- Bug 1 <head> shouldn't wrap the whole markup. <html> might be more appropriate :P -->
+<html>
+  <head>
+    <link href="desired.css" rel="stylesheet"></link>
+    <!-- Bug 2 - no necessity for inline <style></style> as we're including a stylesheet separately -->
+    <!-- Also I added jquery to make the switching of fake tabs easier -->
+    <script src='http://code.jquery.com/jquery-1.10.1.js'></script>
+  </head>
+  <body>
+    <!-- Bug 3 - two divs with the same non-descriptive id "container". For such cases you would use class - however in this particular case, I'd rather have a "container" or "wrapper" wrap the whole markup - for setting positioning reference point - and rename the nav div and content div id's according to what they actually contain. In this case we have the <body> tag encompassing everything, which makes using a "wrapper" or "container" div excessive (unlike the case if the page is constructed dynamically)
+    Also then I can address them directly and don't need classes for them (that's what I think now, perhaps I will need them when I start styling the page) -->
+      <div id="nav">
+        <!-- Bug 4 <ul> tag missing around the unordered list of nav links. Also, as we do have a list, I don't find <nav> tag necessary at all (in addition, IE8 apparently doesn't even support it). Also, as I already put it in the div with id 'nav', i can address this element specifically without giving it a separate class (avoids clutter).
+        <nav class="menu"> -->
+        <ul>
+          <li class='active'><a href='#1'>First Item</a></li>
+          <li><a href='#2'>Second Item</a></li>
+          <li><a href='#3'>Third Item</a></li>
+          <li><a href='#4'>Fourth Item</a></li>
+        </ul>
+      </div>
+
+      <div id="content">
+        <ul class="users">
+          <li>
+            <div class="user">
+              <div class="usr_img"></div>
+              <div class="usr_inf">
+                <h5>
+                  User's Name
+                </h5>
+                <p>
+                  Users bio information.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="user">
+              <div class="usr_img"></div>
+              <div class="usr_inf">
+                <h5>
+                  User's Name
+                </h5>
+                <p>
+                  Users bio information.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="user">
+              <div class="usr_img"></div>
+              <div class="usr_inf">
+                <h5>
+                  Really Long User's Name
+                </h5>
+                <p>
+                  Lot's of irrelevant and totally too long users bio information. Like absolutely useless stuff.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="user">
+              <div class="usr_img"></div>
+              <div class="usr_inf">
+                <h5>
+                  User's Name
+                </h5>
+                <p>
+                  Users bio information.
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div> <!-- end content -->
+    </div> <!-- end wrapper -->
+  <script>
+    $.ready(function(){
+      $('#nav').click(function(event){
+        var li = event.target.nodeName == 'LI' ? $(event.target) : $(event.target).parents('li');
+        li.siblings('.active').removeClass('active');
+        li.addClass('active');
+      });
+    }());
+  </script>
+  </body>
+</html>

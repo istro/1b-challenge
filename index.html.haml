@@ -1,0 +1,41 @@
+!!!
+%html
+  %head
+    %link{:href => "desired.css", :rel => "stylesheet"}
+  %body
+    #nav
+      %ul
+        %li.active
+          %a{:href => '#1'} First Item
+        %li
+          %a{:href => "#2"} Second Item
+        %li
+          %a{:href => "#3"} Third Item
+        %li
+          %a{:href => "#4"} Fourth Item
+    #content
+      %ul.users
+        %li
+          .user
+            .usr_img
+            .usr_inf
+              %h5 User's Name
+              %p Users bio information.
+        %li
+          .user
+            .usr_img
+            .usr_inf
+              %h5 Long User's Name asdf
+              %p Really really long user's information goes here. Like, super long. Users bio information.
+        %li
+          .user
+            .usr_img
+            .usr_inf
+              %h5 User's Name
+              %p Users bio information.
+        %li
+          .user
+            .usr_img
+            .usr_inf
+              %h5 User's Name
+              %p Users bio information.
